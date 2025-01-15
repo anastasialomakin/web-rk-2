@@ -1,0 +1,148 @@
+
+.about-hero {
+    padding: 80px 0;
+    background-color: #f0f0f0;
+}
+
+.about-hero-container {
+   display: flex;
+   align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.about-hero-text {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.about-hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-hero-img {
+    width: 40%;
+     max-width: 400px;
+}
+
+.about-hero-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-features {
+    padding: 50px 0;
+     background-color: #fff;
+}
+
+.about-features-container {
+    text-align: center;
+}
+
+.about-features h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.about-features .feature {
+    display: inline-block;
+    width: calc(25% - 40px);
+    text-align: center;
+    padding: 20px;
+}
+
+.about-features .feature img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+.about-features .feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.about-features .feature p {
+    font-size: 16px;
+    color: #56423e;
+}
+
+.about-cta {
+    background-color: #a7ae9c;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.about-cta-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-section {
+    padding: 50px 0;
+    background-color: #f0f0f0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-text {
+    width: 40%;
+}
+
+.contact-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    width: 50%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column;
+      text-align: center;
+   }
+    .contact-text, .contact-form {
+      width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+      .about-hero-text, .about-hero-img {
+          width: 100%;
+          padding-right: 0;
+         }
+   .about-features .feature {
+       width: calc(50% - 40px);
+     margin-bottom: 20px;
+    }
+}

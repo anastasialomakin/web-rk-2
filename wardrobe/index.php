@@ -99,13 +99,13 @@
                     </div>
                     <div class="subscribe-form">
                         <form>
-                            <input type="email" placeholder="Ваш email" required>
+                            <input type="email" placeholder="Ваш email" style="font-family: 'Poiret One', serif; font-size:18px;" required>
                             <label class="checkbox-container">
                                 <input type="checkbox" required>
                                 <span class="checkmark"></span>
                                 Принимаю пользовательское соглашение и политику конфиденциальности
                             </label>
-                            <button type="submit" class="btn btn-primary">Подписаться</button>
+                            <button type="submit" class="btn btn-primary" style="font-family: 'Poiret One', serif; font-size:18px;">Подписаться</button>
                         </form>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                          echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                         echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>

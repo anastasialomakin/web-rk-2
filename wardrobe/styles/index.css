@@ -37,8 +37,10 @@
 }
 
 .slide {
-    flex: 0 0 25%; 
+    flex: 0 0 auto;
     padding: 0 10px;
+    box-sizing: border-box;
+    width: calc(100%/4);
 }
 
 .product-card {
@@ -46,7 +48,7 @@
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     text-align: center;
+    text-align: center;
 }
 
 .product-card img {
@@ -64,7 +66,7 @@
 
 .product-card-price {
     font-size: 20px;
-     color: #de7261;
+    color: #de7261;
     margin-bottom: 10px;
 }
 
@@ -88,7 +90,7 @@
 .slider-next {
     right: 10px;
 }
-/* Subscribe Section */
+
 .subscribe-section {
     background-color: #f0f0f0;
     padding: 50px 0;
@@ -158,20 +160,18 @@
     transform: rotate(-45deg);
 }
 
-/* Адаптив */
-
 @media (max-width: 768px) {
     .subscribe-content {
-       flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
 
      .subscribe-text, .subscribe-form {
-         width: 100%;
+        width: 100%;
         margin-bottom: 20px;
     }
 
     .slide {
-        flex: 0 0 50%; /* Два слайда на экране */
+        flex: 0 0 50%; 
     }
 }

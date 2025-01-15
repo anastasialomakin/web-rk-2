@@ -7,59 +7,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sliderContainer = document.querySelector('.slider-wrapper');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let slideIndex = 0;
-    let slideWidth;
-    let interval;
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderContainer = document.querySelector('.slider-wrapper');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.slider-prev');
+  const nextBtn = document.querySelector('.slider-next');
+  let slideIndex = 0;
+  let slideWidth = 0;
+  let slidesPerPage = 4;
+  let interval;
 
-    function calculateSlideWidth() {
-      if (slides.length > 0) {
-          slideWidth = slides[0].offsetWidth;
-        }
+  function showSlide(index) {
+    if (index < 0) {
+      slideIndex = numSlides - 1;
+    } else if (index >= numSlides) {
+      slideIndex = 0;
     }
-    calculateSlideWidth();
+    slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+  }
 
-    function updateSlider() {
-      sliderContainer.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-    }
+  prevBtn.addEventListener('click', () => {
+    slideIndex--;
+    showSlide(slideIndex);
+  });
 
-    function nextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      updateSlider();
-    }
-
-    function prevSlide() {
-       slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-       updateSlider();
-    }
-
-    function startSlider() {
-       interval = setInterval(nextSlide, 5000);
-    }
-
-   function stopSlider() {
-         clearInterval(interval);
-    }
-    prevBtn.addEventListener('click', () => {
-        stopSlider();
-        prevSlide();
-        startSlider();
-    });
-
-     nextBtn.addEventListener('click', () => {
-        stopSlider();
-        nextSlide();
-         startSlider();
-    });
-
-   window.addEventListener('resize', () => {
-        calculateSlideWidth();
-        updateSlider();
-   });
-  startSlider();
-
+  nextBtn.addEventListener('click', () => {
+    slideIndex++;
+    showSlide(slideIndex);
+  });
 });

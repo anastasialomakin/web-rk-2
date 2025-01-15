@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe - Интернет-магазин одежды</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -56,7 +57,64 @@
     </header>
 
     <main class="main">
-        <!-- Контент конкретной страницы будет здесь -->
+      <section class="about-hero">
+          <div class="container about-hero-container">
+            <div class="about-hero-text">
+              <h1>О компании Wardrobe</h1>
+              <p>Мы - ваш надежный партнер в мире моды. Мы предлагаем стильную и качественную одежду для всех.</p>
+              </div>
+            <div class="about-hero-img">
+              <img src="img/about-img.png" alt="О компании">
+            </div>
+           </div>
+        </section>
+        <section class="about-features">
+          <div class="container about-features-container">
+            <h2>Почему выбирают Wardrobe</h2>
+              <div class="feature">
+                 <img src="img/quality.png" alt="Качество">
+                  <h3>Высокое качество</h3>
+                  <p>Мы тщательно отбираем материалы и следим за качеством каждого изделия.</p>
+              </div>
+              <div class="feature">
+                  <img src="img/style.png" alt="Стиль">
+                  <h3>Современный стиль</h3>
+                  <p>Наши коллекции соответствуют последним модным тенденциям.</p>
+              </div>
+              <div class="feature">
+                  <img src="img/range.png" alt="Ассортимент">
+                  <h3>Широкий ассортимент</h3>
+                 <p>В нашем магазине вы найдете одежду на любой вкус и случай.</p>
+              </div>
+              <div class="feature">
+                  <img src="img/service.png" alt="Сервис">
+                  <h3>Отличный сервис</h3>
+                 <p>Мы всегда рады помочь вам с выбором и ответить на любые вопросы.</p>
+              </div>
+           </div>
+         </section>
+        <section class="about-cta">
+          <div class="container about-cta-container">
+            <h2>Готовы обновить свой гардероб?</h2>
+            <a href="shop.php" class="btn btn-primary">Перейти в магазин</a>
+          </div>
+        </section>
+        <section class="contact-section">
+            <div class="container contact-container">
+                <div class="contact-text">
+                    <h2>Ваше мнение очень важно для нас!</h2>
+                    <p>Если у вас возникли вопросы, нужна помощь в выборе или вы хотите оставить отзыв о нашем магазине, мы с удовольствием выслушаем вас. Заполните форму, и мы свяжемся с вами в кратчайшие сроки.</p>
+                </div>
+                 <div class="contact-form">
+                     <form>
+                        <input type="text" placeholder="Ваше имя" style="font-family: 'Poiret One', serif; font-size:18px;" required>
+                        <input type="email" placeholder="Ваш email"  style="font-family: 'Poiret One', serif; font-size:18px;" required>
+                        <textarea placeholder="Ваше сообщение" rows="5"  style="font-family: 'Poiret One', serif; font-size:18px;" required></textarea>
+                        <button type="submit" class="btn btn-primary"  style="font-family: 'Poiret One', serif; font-size:18px;">Отправить</button>
+                     </form>
+                </div>
+            </div>
+         </section>
     </main>
 
     <footer class="footer">
@@ -79,7 +137,7 @@
                          echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                         echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>

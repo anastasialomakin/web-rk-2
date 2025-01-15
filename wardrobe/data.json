@@ -1,6 +1,6 @@
 [
     {
-      "category": "верхняя одежда",
+      "category": "outerwear",
       "id": 1,
       "name": "Куртка зимняя мужская",
       "keyword": "kurtkazimnyayamuzhskaya",
@@ -12,7 +12,7 @@
       "isNew": true
     },
     {
-      "category": "верхняя одежда",
+      "category": "outerwear",
       "id": 2,
       "name": "Пальто женское кашемировое",
       "keyword": "paltozhenskoekashimirovoe",
@@ -24,7 +24,7 @@
       "isNew": false
     },
     {
-      "category": "верхняя одежда",
+      "category": "outerwear",
       "id": 3,
       "name": "Плащ тренч классический",
       "keyword": "plashrenchklassicheskii",
@@ -36,7 +36,7 @@
       "isNew": false
     },
     {
-      "category": "верхняя одежда",
+      "category": "outerwear",
       "id": 4,
       "name": "Ветровка спортивная",
       "keyword": "vetrovkasportivnaya",
@@ -48,7 +48,7 @@
       "isNew": true
     },
      {
-      "category": "верхняя одежда",
+      "category": "outerwear",
       "id": 5,
       "name": "Пуховик длинный женский",
       "keyword": "pukhovikdlinnyizhenskii",
@@ -60,7 +60,7 @@
       "isNew": false
     },
     {
-      "category": "верхняя одежда",
+      "category": "outerwear",
       "id": 6,
       "name": "Бомбер мужской кожаный",
       "keyword": "bombermuzhskoikozhanyii",
@@ -72,7 +72,7 @@
       "isNew": false
     },
      {
-      "category": "штаны и брюки",
+      "category": "pants",
       "id": 7,
       "name": "Джинсы мужские классические",
       "keyword": "dzhinsymuzhskieklassicheskie",
@@ -84,7 +84,7 @@
       "isNew": true
     },
      {
-      "category": "штаны и брюки",
+      "category": "pants",
       "id": 8,
       "name": "Брюки женские офисные",
       "keyword": "bryukizhenskieofisnye",
@@ -96,7 +96,7 @@
        "isNew": false
     },
      {
-      "category": "штаны и брюки",
+      "category": "pants",
       "id": 9,
       "name": "Леггинсы спортивные",
       "keyword": "legginsysportivnye",
@@ -108,7 +108,7 @@
       "isNew": true
     },
     {
-      "category": "штаны и брюки",
+      "category": "pants",
       "id": 10,
       "name": "Шорты летние мужские",
       "keyword": "shortyletniemuzhskie",
@@ -120,7 +120,7 @@
       "isNew": false
     },
       {
-      "category": "штаны и брюки",
+      "category": "pants",
       "id": 11,
       "name": "Брюки карго мужские",
       "keyword": "bryukikargomuzhskie",
@@ -132,7 +132,7 @@
       "isNew": false
     },
     {
-      "category": "штаны и брюки",
+      "category": "pants",
       "id": 12,
       "name": "Брюки палаццо женские",
       "keyword": "bryukipalazzozhenskie",
@@ -144,7 +144,7 @@
       "isNew": false
     },
     {
-      "category": "футболки и рубашки",
+      "category": "tshirts",
       "id": 13,
       "name": "Футболка базовая мужская",
       "keyword": "futbolkabazovayamuzhskaya",
@@ -156,7 +156,7 @@
       "isNew": true
     },
    {
-      "category": "футболки и рубашки",
+      "category": "tshirts",
       "id": 14,
       "name": "Рубашка женская белая",
       "keyword": "rubashkazhenskayabelaya",
@@ -168,7 +168,7 @@
       "isNew": false
     },
       {
-      "category": "футболки и рубашки",
+      "category": "tshirts",
       "id": 15,
       "name": "Футболка с принтом унисекс",
       "keyword": "futbolkasprintomunisex",
@@ -180,7 +180,7 @@
       "isNew": false
     },
     {
-      "category": "футболки и рубашки",
+      "category": "tshirts",
       "id": 16,
       "name": "Рубашка льняная мужская",
       "keyword": "rubashkalianyanayamuzhskaya",
@@ -192,7 +192,7 @@
       "isNew": true
     },
       {
-      "category": "футболки и рубашки",
+      "category": "tshirts",
       "id": 17,
       "name": "Топ женский летний",
       "keyword": "topzhenskiiletnii",
@@ -204,7 +204,7 @@
       "isNew": false
     },
     {
-      "category": "футболки и рубашки",
+      "category": "tshirts",
       "id": 18,
       "name": "Поло мужское спортивное",
       "keyword": "polomuzhskoesportivnoe",
@@ -216,7 +216,7 @@
       "isNew": false
     },
     {
-      "category": "головные уборы",
+      "category": "hats",
       "id": 19,
       "name": "Шапка зимняя вязаная",
       "keyword": "shapkazimnyayavyazanaya",
@@ -228,7 +228,7 @@
       "isNew": true
     },
       {
-      "category": "головные уборы",
+      "category": "hats",
       "id": 20,
       "name": "Кепка бейсболка",
       "keyword": "kepkabesbolka",
@@ -240,7 +240,7 @@
       "isNew": false
     },
     {
-      "category": "головные уборы",
+      "category": "hats",
       "id": 21,
       "name": "Шляпа летняя женская",
       "keyword": "shlyapaletnyayazhenskaya",
@@ -252,7 +252,7 @@
       "isNew": false
     },
     {
-      "category": "головные уборы",
+      "category": "hats",
       "id": 22,
       "name": "Берет шерстяной",
       "keyword": "beretsherstianoi",
@@ -264,7 +264,7 @@
       "isNew": true
     },
       {
-      "category": "головные уборы",
+      "category": "hats",
       "id": 23,
       "name": "Панама пляжная",
       "keyword": "panamaplyazhnaya",
@@ -276,7 +276,7 @@
       "isNew": false
     },
     {
-      "category": "головные уборы",
+      "category": "hats",
       "id": 24,
       "name": "Повязка спортивная",
       "keyword": "povyazkasportivnaya",

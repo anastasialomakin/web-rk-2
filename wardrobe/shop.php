@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe - Интернет-магазин одежды</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/shop.css">
+    <script src="scripts/shop.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -56,7 +58,56 @@
     </header>
 
     <main class="main">
-        <!-- Контент конкретной страницы будет здесь -->
+    <section class="shop-page">
+      <div class="container shop-container">
+            <div class="shop-navigation">
+                <nav>
+                    <ul>
+                       <li><a href="#outerwear">Верхняя одежда</a></li>
+                       <li><a href="#pants">Штаны и брюки</a></li>
+                       <li><a href="#tshirts">Футболки и рубашки</a></li>
+                       <li><a href="#hats">Головные уборы</a></li>
+                    </ul>
+                 </nav>
+            </div>
+           <div class="shop-content">
+                <section data-category="outerwear" id="outerwear">
+                    <h2>Верхняя одежда</h2>
+                    <div class="clothes-container" id="outerwear-container"></div>
+                </section>
+
+                <section data-category="pants" id="pants">
+                    <h2>Штаны и брюки</h2>
+                    <div class="clothes-container" id="pants-container"></div>
+                </section>
+
+                <section data-category="tshirts" id="tshirts">
+                    <h2>Футболки и рубашки</h2>
+                    <div class="clothes-container" id="tshirts-container"></div>
+                </section>
+
+                <section data-category="hats" id="hats">
+                    <h2>Головные уборы</h2>
+                    <div class="clothes-container" id="hats-container"></div>
+                </section>
+           </div>
+       </div>
+    </section>
+
+    <div class="cart-panel" id="cart-panel">
+            <div class="cart-panel-content" id="cart-panel-content">
+                <h3 style="display: flex;"><img src="img/cart.png">Товары в корзине</h3>
+                <div class="cart-total">
+                    <p>Общая стоимость: <span id="cart-total-price">0</span> руб.</p>
+                    <p>Кол-во товаров: <span id="cart-total-qty">0</span></p>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-secondary clear-cart-btn">Сбросить заказ</button>
+                    <a href="cart.php" class="btn btn-primary">Корзина</a>
+                    <button class="btn btn-primary checkout-btn">Перейти к оформлению</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -79,13 +130,12 @@
                          echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                         echo '<a href="login.php"">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
+

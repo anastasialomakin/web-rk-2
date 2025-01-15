@@ -1,33 +1,65 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loginModal = document.getElementById('login-form');
-    const registrationModal = document.getElementById('registration-form');
-    const loginNav = document.querySelector('header nav .nav-links li:last-child a');
-    const closeButtons = document.querySelectorAll('.close-btn');
-     const signupButton = document.querySelector('.login-content a');
-    
-    loginNav.addEventListener('click', function(event) {
-        event.preventDefault();
-        loginModal.style.display = 'block';
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    burgerMenu.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
     });
-     signupButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        loginModal.style.display = 'none';
-        registrationModal.style.display = 'block';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sliderContainer = document.querySelector('.slider-wrapper');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let slideIndex = 0;
+    let slideWidth;
+    let interval;
+
+    function calculateSlideWidth() {
+      if (slides.length > 0) {
+          slideWidth = slides[0].offsetWidth;
+        }
+    }
+    calculateSlideWidth();
+
+    function updateSlider() {
+      sliderContainer.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+       slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+       updateSlider();
+    }
+
+    function startSlider() {
+       interval = setInterval(nextSlide, 5000);
+    }
+
+   function stopSlider() {
+         clearInterval(interval);
+    }
+    prevBtn.addEventListener('click', () => {
+        stopSlider();
+        prevSlide();
+        startSlider();
     });
-    closeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            loginModal.style.display = 'none';
-            registrationModal.style.display = 'none';
-        });
+
+     nextBtn.addEventListener('click', () => {
+        stopSlider();
+        nextSlide();
+         startSlider();
     });
-    
-    window.addEventListener('click', function(event){
-      if (event.target == loginModal){
-      loginModal.style.display = 'none';
-      }
-      if (event.target == registrationModal){
-      registrationModal.style.display = 'none';
-      }
-      });
-    
+
+   window.addEventListener('resize', () => {
+        calculateSlideWidth();
+        updateSlider();
+   });
+  startSlider();
+
 });

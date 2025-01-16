@@ -102,9 +102,9 @@
                     <p>Кол-во товаров: <span id="cart-total-qty">0</span></p>
                 </div>
                 <div class="cart-actions">
-                    <button class="btn btn-secondary clear-cart-btn">Сбросить заказ</button>
-                    <a href="cart.php" class="btn btn-primary">Корзина</a>
-                    <button class="btn btn-primary checkout-btn">Перейти к оформлению</button>
+                    <button class="btn btn-secondary clear-cart-btn" style="font-family: 'Poiret One', serif; font-size:18px;">Сбросить заказ</button>
+                    <a href="cart.php" class="btn btn-primary" style="font-size:18px;">Корзина</a>
+                    <button class="btn btn-primary checkout-btn" style="font-family: 'Poiret One', serif; font-size:18px;">Перейти к оформлению</button>
                 </div>
             </div>
         </div>
@@ -127,10 +127,10 @@
                 <?php
                   if (isset($_SESSION['user_id'])) {
                         echo '<a href="cart.php">Корзина</a>';
-                         echo '<a href="orders.php">Мои заказы</a>';
+                        echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php"">Войти / Зарегистрироваться</a>';
+                        echo '<a href="login.php"">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>

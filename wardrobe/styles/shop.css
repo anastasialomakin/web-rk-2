@@ -107,7 +107,6 @@
     background-color: #a7ae9c;
 }
 
-/* Cart Panel */
 .cart-panel {
     display: none;
     position: fixed;
@@ -118,14 +117,15 @@
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 20px;
-     border-top: 1px solid #eee;
+    border-top: 1px solid #eee;
 }
 
 .cart-panel.open {
     display: flex;
-     align-items: center;
-       justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .cart-panel h3{
    font-size: 24px;
   margin-bottom: 0;
@@ -145,11 +145,12 @@
  }
 
 .clear-cart-btn {
-    background-color: #ccc;
+    background-color: #759d46;
     color: #fff;
+    border: none;
 }
 .clear-cart-btn:hover{
-    background-color: #999;
+    background-color: #a7ae9c;
 }
 /* Адаптив */
 @media (max-width: 768px) {

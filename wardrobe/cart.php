@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe - Интернет-магазин одежды</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -56,7 +57,21 @@
     </header>
 
     <main class="main">
-        <!-- Контент конкретной страницы будет здесь -->
+        <section class="cart-page">
+            <div class="container cart-container">
+                <h2>Корзина</h2>
+               <div class="cart-items" id="cart-items-container">
+               </div>
+                <div class="cart-actions">
+                    <button class="btn btn-secondary clear-cart-btn" style="font-family: 'Poiret One', serif; font-size:18px;">Сбросить заказ</button>
+                  <button class="btn btn-primary checkout-btn" style="font-family: 'Poiret One', serif; font-size:18px;">Перейти к оформлению заказа</button>
+                </div>
+              <div class="cart-total">
+               <p>Всего: <span id="cart-total-price">0</span> руб.</p>
+               <p>Кол-во товаров: <span id="cart-total-qty">0</span></p>
+           </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -79,13 +94,13 @@
                          echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                        echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="scripts/cart.js" type="module"></script>
 </body>
 </html>

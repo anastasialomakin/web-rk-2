@@ -79,7 +79,7 @@
                          echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                        echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>

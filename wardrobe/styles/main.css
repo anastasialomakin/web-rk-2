@@ -52,18 +52,29 @@ a {
     background-color: #bea6a1;
     color: #fff;
 }
+.btn-secondary {
+    background-color: #759d46;
+    color: #fff;
+    border: none;
+}
 
-/* Header */
+.btn-secondary:hover {
+    background-color: #a7ae9c;
+    color: #fff;
+}
+
 .header {
     background-color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .header-nav ul {
@@ -190,7 +201,69 @@ a {
     color: #bea6a1;
 }
 
-/* Адаптив */
+.auth-page {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.auth-container .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.auth-container .error-message {
+    color: #de7261;
+    margin-bottom: 16px;
+}
+
+.auth-container .success-message {
+    color: #759d46;
+    margin-bottom: 10px;
+}
+
+.account-page {
+   padding: 80px 0;
+  text-align: center;
+}
+.account-container {
+    max-width: 400px;
+    margin: 0 auto;
+     background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.account-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.user-info p {
+  margin-bottom: 10px;
+  text-align: left;
+}
 
 @media (max-width: 768px) {
   .header-nav {

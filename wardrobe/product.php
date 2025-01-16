@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe - Интернет-магазин одежды</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -55,27 +57,29 @@
         </div>
     </header>
 
-    <main class="main">
-        <section class="auth-page">
-          <div class="container auth-container">
-              <h2>Вход в аккаунт</h2>
-            <form method="post" action="php/auth.php">
-                <input type="hidden" name="action" value="login">
-                <input type="text" name="login" placeholder="Логин или email" style="font-family: 'Poiret One', serif; font-size:18px;" required>
-                <input type="password" name="password" placeholder="Пароль" style="font-family: 'Poiret One', serif; font-size:18px;" required>
-                  <?php
-                    if (isset($_GET['error'])) {
-                    echo '<p class="error-message">Неверный логин или пароль</p>';
-                }
-                ?>
-                <button type="submit" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-primary">Войти</button>
-                  <a href="register.php" class="btn btn-secondary" style="font-size:18px;">Создать аккаунт</a>
-            </form>
-          </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+<?php
+     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+        echo "Некорректный ID товара.";
+      exit;
+    }
+    $product_id = intval($_GET['id']);
+ ?>
+  <main class="main">
+    <section class="product-page">
+        <div class="container product-container">
+        <div class="product-content">
+              <div class="product-details" id="product-details">
+               </div>
+              <div class="product-image">
+                <img id="product-image" src="" alt="">
+                  <div id="product-actions"></div>
+             </div>
+        </div>
+          <a href="shop.php" style="font-size: 18px;" class="btn btn-secondary">Назад в каталог</a>
+      </div>
+   </section>
+ </main>
+ <footer class="footer">
         <div class="container footer-container">
             <div class="footer-col" id="contacts">
                 <h3>Контакты</h3>
@@ -92,7 +96,7 @@
                 <?php
                   if (isset($_SESSION['user_id'])) {
                         echo '<a href="cart.php">Корзина</a>';
-                         echo '<a href="orders.php">Мои заказы</a>';
+                        echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
                         echo '<a href="login.php">Войти / Зарегистрироваться</a>';
@@ -101,7 +105,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
+    <script src="scripts/product.js" type="module"></script>
 </body>
 </html>

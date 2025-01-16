@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe - Интернет-магазин одежды</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/checkout.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -28,6 +29,10 @@
                         echo '<a href="account.php"><img src="img/account-icon.png" alt="Аккаунт" class="account-icon"></a>';
                     } else {
                         echo '<a href="login.php" class="btn btn-primary">Войти</a>';
+                    }
+                    if (!isset($_SESSION['user_id'])) {
+                        header('Location: login.php');
+                        exit;
                     }
                  ?>
             </div>
@@ -56,7 +61,46 @@
     </header>
 
     <main class="main">
-        <!-- Контент конкретной страницы будет здесь -->
+        <section class="checkout-page">
+             <div class="container checkout-container">
+                 <h2>Оформление заказа</h2>
+                <div class="order-info">
+                    <p>Всего к оплате: <span id="checkout-total-price">0</span> руб.</p>
+                    <p>Количество товаров: <span id="checkout-total-qty">0</span></p>
+                <a href="cart.php" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-secondary">Вернуться к корзине</a>
+                </div>
+                <div class="container form-container">
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="delivery-method">Способ доставки:</label>
+                            <select id="delivery-method" required>
+                                <option value="pickup" style="font-family: 'Poiret One', serif;">Самовывоз</option>
+                                <option value="courier" style="font-family: 'Poiret One', serif;">Курьер</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="address-group" style="display: none;">
+                            <label for="address">Адрес доставки:</label>
+                        <input type="text" id="address" style="font-family: 'Poiret One', serif; font-size:18px;" placeholder="Введите адрес доставки">
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-method">Способ оплаты:</label>
+                                <select id="payment-method" required>
+                                <option value="cash" style="font-family: 'Poiret One', serif;">При получении</option>
+                                    <option value="card" style="font-family: 'Poiret One', serif;">Банковской картой</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Комментарий к заказу:</label>
+                                <textarea id="comment" rows="4" style="font-family: 'Poiret One', serif; font-size:18px;" placeholder="Комментарий к заказу"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="reset" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-secondary">Сбросить</button>
+                            <button type="submit" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-primary">Оформить заказ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -79,13 +123,13 @@
                          echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                        echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="scripts/checkout.js" type="module"></script>
 </body>
 </html>

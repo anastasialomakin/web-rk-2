@@ -44,27 +44,32 @@
 }
 
 .clothes-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .product-card {
-    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     border-radius: 8px;
+    border: transparent;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
+    text-align: center;
+    transition: 0.3s ease;
 }
 
-.product-card a {
-    display: block;
+.product-card:hover {
+    border: 2px solid #759d46;
+    transition: 0.1s ease;
 }
 
 .product-card img {
     max-width: 100%;
-    height: 250px;
+    height: 500px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -79,7 +84,6 @@
 .product-card-price {
     font-size: 20px;
     color: #de7261;
-    margin-bottom: 10px;
 }
 
 .new-tag {
@@ -109,11 +113,10 @@
 
 .cart-panel {
     display: none;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 20px;
@@ -127,16 +130,17 @@
 }
 
 .cart-panel h3{
-   font-size: 24px;
-  margin-bottom: 0;
+    font-size: 24px;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 .cart-panel .cart-info{
-  display: flex;
-  align-items: center;
-   gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
  }
  .cart-panel .cart-info img {
-      width: 30px;
+    width: 30px;
     height: auto;
 }
 .cart-actions {
@@ -152,7 +156,7 @@
 .clear-cart-btn:hover{
     background-color: #a7ae9c;
 }
-/* Адаптив */
+
 @media (max-width: 768px) {
     .shop-container {
         flex-direction: column;

@@ -130,16 +130,15 @@
                 <?php
                   if (isset($_SESSION['user_id'])) {
                         echo '<a href="cart.php">Корзина</a>';
-                         echo '<a href="orders.php">Мои заказы</a>';
+                        echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php">Войти / Зарегистрироваться</a>';
+                        echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
+    <script src="scripts/script.js" type="module"></script>
 </body>
 </html>

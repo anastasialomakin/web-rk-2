@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe - Интернет-магазин одежды</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/authform.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -57,21 +58,25 @@
 
     <main class="main">
         <section class="auth-page">
-          <div class="container auth-container">
-              <h2>Вход в аккаунт</h2>
-            <form method="post" action="php/auth.php">
-                <input type="hidden" name="action" value="login">
-                <input type="text" name="login" placeholder="Логин или email" style="font-family: 'Poiret One', serif; font-size:18px;" required>
-                <input type="password" name="password" placeholder="Пароль" style="font-family: 'Poiret One', serif; font-size:18px;" required>
-                  <?php
-                    if (isset($_GET['error'])) {
-                    echo '<p class="error-message">Неверный логин или пароль</p>';
-                }
-                ?>
-                <button type="submit" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-primary">Войти</button>
-                  <a href="register.php" class="btn btn-secondary" style="font-size:18px;">Создать аккаунт</a>
-            </form>
-          </div>
+            <div class="container auth-container">
+                <h2>Создать аккаунт</h2>
+                <form method="post" action="php/auth.php">
+                    <input type="hidden" name="action" value="register">
+                    <input type="text" name="username" placeholder="Логин (имя пользователя)" style="font-family: 'Poiret One', serif; font-size:18px;" required>
+                    <input type="email" name="email" placeholder="Email" style="font-family: 'Poiret One', serif; font-size:18px;" required>
+                    <input type="tel" name="phone" placeholder="Телефон" style="font-family: 'Poiret One', serif; font-size:18px;">
+                    <input type="password" name="password" placeholder="Пароль" style="font-family: 'Poiret One', serif; font-size:18px;" required>
+                    <div class="buttons">
+                        <button type="reset" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-secondary">Сбросить</button>
+                        <button type="submit" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-primary">Создать аккаунт</button>
+                    </div>
+                    <?php
+                    if (isset($_GET['success'])) {
+                    echo '<p class="success-message">Аккаунт создан! <a href="login.php">Войти</a></p>';
+                    }
+                    ?>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -92,7 +97,7 @@
                 <?php
                   if (isset($_SESSION['user_id'])) {
                         echo '<a href="cart.php">Корзина</a>';
-                         echo '<a href="orders.php">Мои заказы</a>';
+                        echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
                         echo '<a href="login.php">Войти / Зарегистрироваться</a>';

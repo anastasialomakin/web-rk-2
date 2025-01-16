@@ -29,7 +29,19 @@
                     } else {
                         echo '<a href="login.php" class="btn btn-primary">Войти</a>';
                     }
-                 ?>
+                    
+                    if (!isset($_SESSION['user_id'])) {
+                    header('Location: login.php');
+                    exit;
+                    }
+                    include 'php/database.php';
+                    $user_id = $_SESSION['user_id'];
+                    $user = getUserById($user_id, $conn);
+                    if (!$user) {
+                        echo "Пользователь не найден.";
+                        exit;
+                    }
+                    ?>
             </div>
             <button class="burger-menu">
                 <span class="burger-line"></span>
@@ -55,9 +67,23 @@
         </div>
     </header>
 
-    <main class="main">
-        <!-- Контент конкретной страницы будет здесь -->
-    </main>
+ <main class="main">
+    <section class="account-page">
+        <div class="container account-container">
+            <h2>Аккаунт пользователя</h2>
+            <div class="user-info">
+                <img src="img/account.png">
+                <p><strong>Логин:</strong> <?php echo $user['username']; ?></p>
+                <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
+                <p><strong>Телефон:</strong> <?php echo $user['phone']; ?></p>
+            </div>
+            <form method="post" action="php/auth.php">
+              <input type="hidden" name="action" value="logout">
+                <button type="submit" style="font-family: 'Poiret One', serif; font-size:18px;" class="btn btn-secondary">Выйти из аккаунта</button>
+           </form>
+        </div>
+    </section>
+  </main>
 
     <footer class="footer">
         <div class="container footer-container">
@@ -76,10 +102,10 @@
                 <?php
                   if (isset($_SESSION['user_id'])) {
                         echo '<a href="cart.php">Корзина</a>';
-                         echo '<a href="orders.php">Мои заказы</a>';
+                        echo '<a href="orders.php">Мои заказы</a>';
                         echo '<a href="account.php">Аккаунт</a>';
                     } else {
-                         echo '<a href="login.php" class="btn btn-primary">Войти / Зарегистрироваться</a>';
+                        echo '<a href="login.php">Войти / Зарегистрироваться</a>';
                     }
                     ?>
             </div>

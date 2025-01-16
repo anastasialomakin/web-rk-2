@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
           slideWidth = slides[0].offsetWidth;
           slidesPerPage = Math.floor(sliderContainer.offsetWidth / slideWidth);
           if(slidesPerPage === 0){
-              slidesPerPage = 1;
+            slidesPerPage = 1;
           }
-          console.log('Слайдер: Ширина слайда', slideWidth);
-          console.log('Слайдер: Слайдов на экране', slidesPerPage);
       }
   }
   calculateSlideWidth();
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateSlider() {
       const translateXValue = -slideIndex * slideWidth;
       sliderContainer.style.transform = `translateX(${translateXValue}px)`;
-      console.log('Слайдер: Трансформация', translateXValue);
   }
 
   function nextSlide() {
@@ -44,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
           slideIndex = 0;
       }
       updateSlider();
-      console.log('Слайдер: след слайд. slideIndex', slideIndex);
   }
 
   function prevSlide() {
@@ -53,37 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
           slideIndex = slides.length - slidesPerPage;
       }
       updateSlider();
-      console.log('Слайдер: пред слайд. slideIndex', slideIndex);
   }
 
   function startSlider() {
       interval = setInterval(nextSlide, 5000);
-      console.log('Слайдер: автоматическое перелистывание запущено')
   }
 
   function stopSlider() {
       clearInterval(interval);
-      console.log('Слайдер: автоматическое перелистывание остановлено');
   }
 
   prevBtn.addEventListener('click', () => {
       stopSlider();
       prevSlide();
       startSlider();
-      console.log('Слайдер: Клик на пред слайд');
   });
 
   nextBtn.addEventListener('click', () => {
       stopSlider();
       nextSlide();
       startSlider();
-      console.log('Слайдер: Клик на след слайд');
   });
 
   window.addEventListener('resize', () => {
       calculateSlideWidth();
       updateSlider();
-      console.log('Слайдер: Изменение размера окна');
   });
 
   startSlider();
